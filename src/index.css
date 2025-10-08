@@ -4,3 +4,14 @@
 body {
   font-family: "Inter", sans-serif;
 }
+.wc {
+  @apply text-white;
+}
+.gc {
+  @apply text-gray-200;
+}
+.active-link {
+  color: #9055ef;
+  font-weight: bold;
+  border-bottom: 2px solid #9055ef;
+}

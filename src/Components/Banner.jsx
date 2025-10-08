@@ -28,30 +28,29 @@ const Banner = () => {
           flex-col bg-linear-to-br from-[#632ee3] to-[#9f62f3]"
           >
             <div>
-              <h1 className="text-5xl font-bold text-white py-5">Trusted by Millions, Built for You</h1>
+              <h1 className="text-5xl font-bold text-white py-5">
+                Trusted by Millions, Built for You
+              </h1>
             </div>
             <div className="flex">
               <div className="stat">
                 <div className="stat-figure text-primary"></div>
-                <div className="stat-title">Total Likes</div>
-                <div className="stat-value text-primary">25.6K</div>
-                <div className="stat-desc">21% more than last month</div>
+                <div className="stat-title gc">Total Downloads</div>
+                <div className="stat-value wc">29.6M</div>
+                <div className="stat-desc gc">21% more than last month</div>
               </div>
 
               <div className="stat">
                 <div className="stat-figure text-secondary"></div>
-                <div className="stat-title">Page Views</div>
-                <div className="stat-value text-secondary">2.6M</div>
-                <div className="stat-desc">21% more than last month</div>
+                <div className="stat-title gc">Total Reviews</div>
+                <div className="stat-value wc">906K</div>
+                <div className="stat-desc gc">46% more than last month</div>
               </div>
-
               <div className="stat">
                 <div className="stat-figure text-secondary"></div>
-                <div className="stat-value">86%</div>
-                <div className="stat-title">Tasks done</div>
-                <div className="stat-desc text-secondary">
-                  31 tasks remaining
-                </div>
+                <div className="stat-title gc">Active Apps</div>
+                <div className="stat-value wc">132+</div>
+                <div className="stat-desc gc">31 more will lanch</div>
               </div>
             </div>
           </div>

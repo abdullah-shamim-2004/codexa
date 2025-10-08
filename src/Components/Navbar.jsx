@@ -48,13 +48,28 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-semibold">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/Apps">Apps</NavLink>
+            <NavLink
+              to="/Apps"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              Apps
+            </NavLink>
           </li>
           <li>
-            <NavLink>Installation</NavLink>
+            <NavLink
+              to="/installation"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              Installation
+            </NavLink>
           </li>
         </ul>
       </div>
