@@ -4,6 +4,7 @@ import Banner from "../Components/Banner";
 import useApps from "../Hooks/useApps";
 import Loader from "../Components/Loader";
 import AppCard from "../Components/AppCard";
+import { Link } from "react-router";
 // import { Loader } from "lucide-react";
 
 const Home = () => {
@@ -34,9 +35,11 @@ const Home = () => {
           )}
         </div>
         <div>
-          <button className="btn shadow-lg border-none text-white text-xl font-bold mt-15 bg-linear-to-r from-[#642fe4] to-[#7566f7] hover:scale-105 transition ease-in-out">
-            Show All
-          </button>
+          <Link to="/Apps">
+            <button className="btn shadow-lg border-none text-white text-xl font-bold mt-15 bg-linear-to-r from-[#642fe4] to-[#7566f7] hover:scale-105 transition ease-in-out">
+              Show All
+            </button>
+          </Link>
         </div>
       </div>
     </div>
