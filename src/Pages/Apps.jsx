@@ -28,14 +28,14 @@ const Apps = () => {
   return (
     <div>
       <div className="flex flex-col items-center my-5">
-        <h1 className="text-5xl font-bold mb-1.5">Our All Applications</h1>
-        <p className="text-gray-700">
+        <h1 className="text-2xl lg:text-5xl font-bold mb-1.5">Our All Applications</h1>
+        <p className="text-gray-700 ">
           Explore All Apps on the Market developed by us. We code for Millions
         </p>
       </div>
 
       <div className="my-3.5 flex justify-between items-center">
-        <h3 className="text-2xl font-semibold">
+        <h3 className="text-xl lg:text-2xl font-semibold">
           (<span>{filter.length}</span>) Apps Found
         </h3>
         <label className="input flex items-center border rounded-md px-2">

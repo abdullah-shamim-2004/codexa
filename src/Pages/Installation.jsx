@@ -8,7 +8,7 @@ const Installation = () => {
 
   if (!list.length)
     return (
-      <div className="min-w-screen-2xl min-h-screen-2xl m-auto bg-gray-100 flex justify-center items-center">
+      <div className="min-w-screen-2xl min-h-screen m-auto bg-gray-100 flex justify-center items-center">
         <h1 className="text-3xl font-bold ">You don't installed any app.</h1>
       </div>
     );
@@ -27,13 +27,13 @@ const Installation = () => {
     <div className="min-h-screen">
       <div>
         <div className="flex flex-col items-center my-5">
-          <h1 className="text-5xl font-bold mb-1.5">Your Installed Apps</h1>
+          <h1 className="text-2xl lg:text-5xl font-bold mb-1.5">Your Installed Apps</h1>
           <p className="text-gray-700">
             Explore All Trending Apps on the Market developed by us.
           </p>
         </div>
         <div className="my-3.5 flex justify-between items-center">
-          <h3 className="text-2xl font-semibold">
+          <h3 className="text-xl lg:text-2xl font-semibold">
             (<span>{list.length}</span>) Apps Found
           </h3>
           <select

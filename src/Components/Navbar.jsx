@@ -1,6 +1,6 @@
 import React from "react";
 import LogoImg from "../assets/logo.png";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { Github } from "lucide-react";
 
 const Navbar = () => {
@@ -30,19 +30,21 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-semibold"
           >
             <li>
-              <NavLink>Home</NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink>Apps</NavLink>
+              <NavLink to="/Apps">Apps</NavLink>
             </li>
             <li>
-              <NavLink>Installation</NavLink>
+              <NavLink to="/installation">Installation</NavLink>
             </li>
           </ul>
         </div>
         <div className="flex ">
           <img className="w-8 h-8 mr-2" src={LogoImg} alt="Logo Image" />
-          <a className=" text-xl font-semibold text-[#8f53ee]">Codexa.io</a>
+          <Link to="/" className=" text-xl font-semibold text-[#8f53ee]">
+            Codexa.io
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">

@@ -51,10 +51,10 @@ const AppDetails = () => {
           <img src={image} alt={title} />
         </figure>
         <div className="card-body">
-          <h2 className="card-title text-3xl font-bold">{title}</h2>
+          <h2 className="card-title text-xl lg:text-3xl font-bold">{title}</h2>
           <h3 className="text-gray-600">
             Developed By:{" "}
-            <span className="text-[#9c70f3] font-bold text-xl">
+            <span className="text-[#9c70f3] font-bold lg:text-xl">
               {companyName}
             </span>
           </h3>
@@ -62,17 +62,23 @@ const AppDetails = () => {
             <div>
               <img src={DownImg} alt="" />
               <p>Downloads</p>
-              <h2 className="text-4xl font-extrabold">{downloads}</h2>
+              <h2 className=" text-2xl lg:text-4xl font-extrabold">
+                {downloads}
+              </h2>
             </div>
             <div>
               <img src={RatingImg} alt="" />
               <p>Average Ratings</p>
-              <h2 className="text-4xl font-extrabold">{ratingAvg}</h2>
+              <h2 className="text-2xl lg:text-4xl font-extrabold">
+                {ratingAvg}
+              </h2>
             </div>
             <div>
               <img src={ReviewImg} alt="" />
               <p>Total Reviews</p>
-              <h2 className="text-4xl font-extrabold">{reviews}</h2>
+              <h2 className="text-2xl lg:text-4xl  font-extrabold">
+                {reviews}
+              </h2>
             </div>
           </div>
 

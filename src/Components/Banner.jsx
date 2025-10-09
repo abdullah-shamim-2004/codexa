@@ -5,23 +5,23 @@ import AppImage from "../assets/app-store.png";
 
 const Banner = () => {
   return (
-    <div className="hero bg-base-200">
-      <div className="hero-content min-w-screen-2xl  text-center flex flex-col ">
+    <div className="hero min-w-screen-2xl p-0 bg-base-200">
+      <div className="hero-content text-center flex flex-col ">
         <div className=" flex flex-col justify-center items-center">
-          <h1 className="text-7xl font-semibold">
+          <h1 className="text-2xl lg:text-7xl font-semibold">
             We Build <br /> <span className="text-[#915ded] ">Productive</span>{" "}
             Apps
           </h1>
-          <p className="py-6">
+          <p className="py-6 text-sm lg:text-xl ">
             At Codexa.IO, we craft innovative apps designed to make everyday
             life simpler, <br /> smarter, and more exciting.Our goal is to turn
             your ideas into digital experiences that truly make an impact.
           </p>
-          <div className="flex">
+          <div className="flex pb-3">
             <div className="flex ">
               <a href="https://play.google.com/store/apps?hl=en">
                 {" "}
-                <button className="btn mr-2.5 p-5">
+                <button className="btn p-1.5 mr-2.5 lg:p-5">
                   <img src={PlayImage} alt="" />
                   Google Play
                 </button>
@@ -30,7 +30,7 @@ const Banner = () => {
             <div className="flex ">
               <a href="https://www.apple.com/app-store/">
                 {" "}
-                <button className="btn mr-2.5 p-5">
+                <button className="btn p-1.5 lg:p-5">
                   <img src={AppImage} alt="" />
                   App Store
                 </button>
@@ -41,10 +41,10 @@ const Banner = () => {
         <div>
           <img src={HeroImage} alt="" />
         </div>
-        <div className="stats shadow w-full ">
+        <div className="stats mx-auto shadow  ">
           <div className="flex flex-col bg-linear-to-br from-[#632ee3] to-[#9f62f3]">
             <div>
-              <h1 className="text-5xl font-bold text-white py-5">
+              <h1 className="text-2xl lg:text-5xl font-bold text-white lg:py-5">
                 Trusted by Millions, Built for You
               </h1>
             </div>
