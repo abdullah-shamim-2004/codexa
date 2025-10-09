@@ -1,32 +1,48 @@
 import React from "react";
 import HeroImage from "../assets/hero.png";
+import PlayImage from "../assets/app.png";
+import AppImage from "../assets/app-store.png";
 
 const Banner = () => {
   return (
     <div className="hero bg-base-200">
-      <div className="hero-content text-center flex flex-col ">
-        <div className="max-w-md">
+      <div className="hero-content min-w-screen-2xl  text-center flex flex-col ">
+        <div className=" flex flex-col justify-center items-center">
           <h1 className="text-7xl font-semibold">
-            We Build <span className="text-[#915ded] ">Productive</span> Apps
+            We Build <br /> <span className="text-[#915ded] ">Productive</span>{" "}
+            Apps
           </h1>
           <p className="py-6">
             At Codexa.IO, we craft innovative apps designed to make everyday
-            life simpler, smarter, and more exciting.Our goal is to turn your
-            ideas into digital experiences that truly make an impact.
+            life simpler, <br /> smarter, and more exciting.Our goal is to turn
+            your ideas into digital experiences that truly make an impact.
           </p>
-          <div>
-            <button className="btn mr-2.5 p-5">Google Play</button>
-            <button className="btn p-5">App Store</button>
+          <div className="flex">
+            <div className="flex ">
+              <a href="https://play.google.com/store/apps?hl=en">
+                {" "}
+                <button className="btn mr-2.5 p-5">
+                  <img src={PlayImage} alt="" />
+                  Google Play
+                </button>
+              </a>
+            </div>
+            <div className="flex ">
+              <a href="https://www.apple.com/app-store/">
+                {" "}
+                <button className="btn mr-2.5 p-5">
+                  <img src={AppImage} alt="" />
+                  App Store
+                </button>
+              </a>
+            </div>
           </div>
         </div>
         <div>
           <img src={HeroImage} alt="" />
         </div>
-        <div className="stats shadow min-w-screen-xl">
-          <div
-            className="flex
-          flex-col bg-linear-to-br from-[#632ee3] to-[#9f62f3]"
-          >
+        <div className="stats shadow w-full ">
+          <div className="flex flex-col bg-linear-to-br from-[#632ee3] to-[#9f62f3]">
             <div>
               <h1 className="text-5xl font-bold text-white py-5">
                 Trusted by Millions, Built for You

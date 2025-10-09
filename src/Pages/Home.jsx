@@ -5,6 +5,7 @@ import useApps from "../Hooks/useApps";
 import Loader from "../Components/Loader";
 import AppCard from "../Components/AppCard";
 import { Link } from "react-router";
+import Footer from "../Components/Footer";
 // import { Loader } from "lucide-react";
 
 const Home = () => {
@@ -36,12 +37,13 @@ const Home = () => {
         </div>
         <div>
           <Link to="/Apps">
-            <button className="btn shadow-lg border-none text-white text-xl font-bold mt-15 bg-linear-to-r from-[#642fe4] to-[#7566f7] hover:scale-105 transition ease-in-out">
+            <button className="btn shadow-lg border-none text-white text-xl font-bold my-15 bg-linear-to-r from-[#642fe4] to-[#7566f7] hover:scale-105 transition ease-in-out">
               Show All
             </button>
           </Link>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

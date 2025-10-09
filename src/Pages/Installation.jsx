@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import { LoadAppList } from "../Utilites/LocalStorage";
-// import AppCard from "../Components/AppCard";
 import InstallCard from "../Components/InstallCard";
-
 const Installation = () => {
-  //   const list = LoadAppList();
   const [list, setApplist] = useState(() => LoadAppList());
 
   const [sortOrder, setSortOrder] = useState("none");
 
   if (!list.length)
     return (
-      <div className="min-w-screen-2xl min-h-screen m-auto bg-gray-100 flex justify-center items-center">
+      <div className="min-w-screen-2xl min-h-screen-2xl m-auto bg-gray-100 flex justify-center items-center">
         <h1 className="text-3xl font-bold ">You don't installed any app.</h1>
       </div>
     );
@@ -26,10 +23,8 @@ const Installation = () => {
     }
   };
 
-  //   const sortedList = sortItems();
-
   return (
-    <div>
+    <div className="min-h-screen">
       <div>
         <div className="flex flex-col items-center my-5">
           <h1 className="text-5xl font-bold mb-1.5">Your Installed Apps</h1>
@@ -42,7 +37,6 @@ const Installation = () => {
             (<span>{list.length}</span>) Apps Found
           </h3>
           <select
-            // defaultValue="Pick a color"
             className="select appearance-none"
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}

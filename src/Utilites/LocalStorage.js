@@ -1,36 +1,43 @@
 import { Apple } from "lucide-react";
 
-// get the list from localstorage
 export const LoadAppList = () => {
   try {
     const data = localStorage.getItem("AppList");
     return data ? JSON.parse(data) : [];
   } catch (error) {
-    console.log(error);
+    console.log("Error loading AppList:", error);
     return [];
   }
 };
 
-// Save in local storage
-export const updateList = (apps) => {
-  const AppList = LoadAppList();
-
+export const updateList = (app) => {
   try {
-    const isDuplicate = AppList.some((p) => p.id === apps.id);
-    if (isDuplicate) return alert("Already Installed");
-    const updateAppList = [...AppList, apps];
-    localStorage.setItem("AppList", JSON.stringify(updateAppList));
+    const AppList = LoadAppList();
+
+    const isDuplicate = AppList.some((p) => p.id === app.id);
+
+    if (isDuplicate) {
+      alert("Already Installed");
+      return AppList;
+    }
+
+    const updatedAppList = [...AppList, { ...app, installed: true }];
+    localStorage.setItem("AppList", JSON.stringify(updatedAppList));
+    return updatedAppList;
   } catch (error) {
-    console.log(error);
+    console.log("Error updating AppList:", error);
+    return [];
   }
 };
-// Remove from AppList
+
 export const removeFromAppList = (id) => {
-  const AppList = LoadAppList();
   try {
-    const deleteAppList = AppList.filter((p) => p.id !== id);
-    localStorage.setItem("AppList", JSON.stringify(deleteAppList));
+    const AppList = LoadAppList();
+    const updatedList = AppList.filter((p) => p.id !== id);
+    localStorage.setItem("AppList", JSON.stringify(updatedList));
+    return updatedList;
   } catch (error) {
-    console.log(error);
+    console.log("Error removing from AppList:", error);
+    return [];
   }
 };

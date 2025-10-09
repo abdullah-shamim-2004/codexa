@@ -74,7 +74,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-white bg-linear-to-r from-[#642fe4] to-[#7566f7]">
+        <a
+          href="https://github.com/abdullah-shamim-2004"
+          className="btn text-white bg-linear-to-r from-[#642fe4] to-[#7566f7]"
+        >
           {" "}
           <Github />
           Contribute

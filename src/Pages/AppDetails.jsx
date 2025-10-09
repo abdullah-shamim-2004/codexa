@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import useApps from "../Hooks/useApps";
 import DownImg from "../assets/icon-downloads.png";
 import RatingImg from "../assets/icon-ratings.png";
 import ReviewImg from "../assets/icon-review.png";
 import RatingsBarChart from "../Components/renderBarChart";
-import { updateList } from "../Utilites/LocalStorage";
+import { LoadAppList, updateList } from "../Utilites/LocalStorage";
+import { ToastContainer, toast } from "react-toastify";
 
 const AppDetails = () => {
   const { id } = useParams();
   const { allApps } = useApps();
   const apps = allApps.find((p) => p.id === Number(id));
-  // console.log(apps);
 
   const {
     image,
@@ -24,24 +24,39 @@ const AppDetails = () => {
     ratingAvg,
     reviews,
   } = apps || {};
-  const [Install, setInstall] = useState(false);
-  const [isDisabled, setDisabled] = useState(false);
+
+  const [isInstalled, setIsInstalled] = useState(false);
+
+  useEffect(() => {
+    if (!apps) return;
+    const list = LoadAppList();
+    const installed = list.some((p) => p.id === apps.id && p.installed);
+    setIsInstalled(installed);
+  }, [apps]);
 
   const handleInstall = () => {
+    if (!apps) return;
     updateList(apps);
-    setInstall(true);
-    setDisabled(true);
+    setIsInstalled(true);
+    toast(`${title} Installed Successfully.`);
   };
+
+  if (!apps) return <p>App Not Found</p>;
+
   return (
     <div>
+      <ToastContainer></ToastContainer>
       <div className="card card-side bg-base-100 shadow-sm">
         <figure>
-          <img src={image} alt="Movie" />
+          <img src={image} alt={title} />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{title}</h2>
-          <h3>
-            Develop By: <span>{companyName}</span>
+          <h2 className="card-title text-3xl font-bold">{title}</h2>
+          <h3 className="text-gray-600">
+            Developed By:{" "}
+            <span className="text-[#9c70f3] font-bold text-xl">
+              {companyName}
+            </span>
           </h3>
           <div className="flex gap-10">
             <div>
@@ -60,12 +75,15 @@ const AppDetails = () => {
               <h2 className="text-4xl font-extrabold">{reviews}</h2>
             </div>
           </div>
+
           <button
             onClick={handleInstall}
-            disabled={isDisabled}
-            className="btn text-white px-6 py-3.5 w-fit text-2xl font-semibold bg-[#14acbb]"
+            disabled={isInstalled} // ✅ fixed
+            className={`btn text-white lg:px-6 lg:py-3.5 my-4 w-fit lg:text-2xl font-semibold ${
+              isInstalled ? "bg-gray-400 cursor-not-allowed" : "bg-[#00d390]"
+            }`}
           >
-            {Install ? "Intalled" : `Install Now (${size}MB)`}
+            {isInstalled ? "Installed" : `Install Now (${size}MB)`}{" "}
           </button>
         </div>
       </div>
@@ -74,6 +92,7 @@ const AppDetails = () => {
         <h1 className="text-2xl font-semibold ml-12">Ratings</h1>
         <RatingsBarChart ratings={ratings}></RatingsBarChart>
       </div>
+
       <div>
         <h1 className="text-2xl font-semibold my-3.5">Description:</h1>
         <p>{description}</p>
