@@ -12,7 +12,7 @@ const Home = () => {
   const data = allApps.slice(0, 8);
 
   return (
-    <div>
+    <div className="text-center">
       <Banner></Banner>
       <div className="">
         <div className="text-center">
@@ -40,7 +40,6 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };
