@@ -7,6 +7,7 @@ import ReviewImg from "../assets/icon-review.png";
 import RatingsBarChart from "../Components/renderBarChart";
 import { LoadAppList, updateList } from "../Utilites/LocalStorage";
 import { ToastContainer, toast } from "react-toastify";
+import AppError from "./AppError";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const AppDetails = () => {
     toast(`${title} Installed Successfully.`);
   };
 
-  if (!apps) return <p>App Not Found</p>;
+  if (!apps) return <AppError></AppError>;
 
   return (
     <div>

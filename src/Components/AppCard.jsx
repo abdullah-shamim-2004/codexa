@@ -11,7 +11,10 @@ const AppCard = ({ app }) => {
           <img src={image} alt="" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">{title}</h2>
+          <h2 className="card-title whitespace-nowrap overflow-hidden text-ellipsis w-56">
+            {title}
+          </h2>
+
           <div className="card-actions flex justify-between items-center lg:gap-30">
             <button className="btn p-1.5 text-[#00d390]">
               <Download />

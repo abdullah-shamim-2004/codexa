@@ -5,9 +5,9 @@ import AppImage from "../assets/app-store.png";
 
 const Banner = () => {
   return (
-    <div className="hero min-w-screen-2xl p-0 bg-base-200">
-      <div className="hero-content text-center flex flex-col ">
-        <div className=" flex flex-col justify-center items-center">
+    <div className="py-4 bg-base-200">
+      <div className=" text-center flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center ">
           <h1 className="text-2xl lg:text-7xl font-semibold">
             We Build <br /> <span className="text-[#915ded] ">Productive</span>{" "}
             Apps
@@ -41,8 +41,8 @@ const Banner = () => {
         <div>
           <img src={HeroImage} alt="" />
         </div>
-        <div className="stats mx-auto shadow  ">
-          <div className="flex flex-col bg-linear-to-br from-[#632ee3] to-[#9f62f3]">
+        <div className="shadow w-full">
+          <div className="max-w-7xl mx-auto bg-linear-to-br from-[#632ee3] to-[#9f62f3]">
             <div>
               <h1 className="text-2xl lg:text-5xl font-bold text-white lg:py-5">
                 Trusted by Millions, Built for You

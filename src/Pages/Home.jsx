@@ -6,19 +6,16 @@ import Loader from "../Components/Loader";
 import AppCard from "../Components/AppCard";
 import { Link } from "react-router";
 import Footer from "../Components/Footer";
-// import { Loader } from "lucide-react";
 
 const Home = () => {
   const { allApps, loading } = useApps();
-  // console.log(allApps);
-  // const allData = useLoaderData();
   const data = allApps.slice(0, 8);
 
   return (
     <div>
       <Banner></Banner>
-      <div className="text-center">
-        <div className="flex flex-col items-center">
+      <div className="">
+        <div className="text-center">
           <h1 className="text-5xl font-bold mb-1.5">Trending Apps</h1>
           <p className="text-gray-700">
             Explore All Trending Apps on the Market developed by us
